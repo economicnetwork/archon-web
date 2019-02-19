@@ -1,6 +1,6 @@
 apikeys.toml
 *.toml
-log/
+logs/
 __pycache__
 node_modules/
 package-lock.json
