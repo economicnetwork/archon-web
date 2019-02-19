@@ -1,6 +1,0 @@
-apikeys.toml
-*.toml
-node_modules/
-log/
-package-lock.json
-yarn.lock
