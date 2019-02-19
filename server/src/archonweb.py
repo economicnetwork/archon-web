@@ -34,7 +34,8 @@ def orders():
     response = requests.get(s3_url + "orders").json()
     print (response)
     #open_orders = json.loads(orders)
-    return resp(response)
+    orders = {"orders": response}
+    return resp(orders)
 
 @archonweb.route("/api/balance")
 def balances():

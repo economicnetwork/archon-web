@@ -9,31 +9,33 @@ class App extends Component {
     responseToPost: '',
   };
   componentDidMount() {
-    console.log("mount");
-    this.callApi()
-      .then(res => this.setState({ balance: res.balance }))
-      .catch(err => console.log(err));
+    console.  log("mount");
+    /*this.callApiBalance()
+      .then(res => this.setState({ balance: res }))
+      .catch(err => console.log(err));*/
 
     this.callApiOrders()
-    .then(res => this.setState({ orders: res.orders }))
+    .then(res => this.setState({ orders: res }))
     .catch(err => console.log(err));
 
   }
 
-  callApi = async () => {
-    console.log("call api");
+  callApiBalance = async () => {
+    console.log("call callApiBalance");
     const response = await fetch('/api/balance');
     const body = await response.json();
-    console.log("body: " + body.balance);
+    alert(body);
+    console.log("orders: " + body.orders);
     if (response.status !== 200) throw Error(body.message);
-    return body;
+    return body.orders;
   };
 
   callApiOrders = async () => {
-    console.log("call api");
+    console.log("call orders");
     const response = await fetch('/api/orders');
     const body = await response.json();
-    console.log("body: " + body.balance);
+    alert(body);
+    console.log("orders: " + body);
     if (response.status !== 200) throw Error(body.message);
     return body;
   };
