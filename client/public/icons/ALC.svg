@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="234px" height="234px" viewBox="0 0 234 234" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51 (57462) - http://www.bohemiancoding.com/sketch -->
+    <title>ALC</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="19.5441946%" x2="50.9884701%" y2="72.26662%" id="linearGradient-1">
+            <stop stop-color="#FFFFFF" stop-opacity="0.5" offset="0%"></stop>
+            <stop stop-color="#000000" stop-opacity="0.5" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="50%" x2="50%" y2="100%" id="linearGradient-2">
+            <stop stop-color="#501DF8" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#511EF9" offset="100%"></stop>
+        </linearGradient>
+        <circle id="path-3" cx="117" cy="117" r="117"></circle>
+        <path d="M48,173 L108.612313,44 L124.609449,44 L184,173 L48,173 Z M83.0084942,150.759488 L149.896722,150.759488 L120.686952,87.3140368 L112.819157,87.3140368 L83.0084942,150.759488 Z" id="path-4"></path>
+        <filter x="-5.1%" y="-3.9%" width="110.3%" height="110.9%" filterUnits="objectBoundingBox" id="filter-5">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.2 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ALC" fill-rule="nonzero">
+            <g id="Oval">
+                <use fill="#6213FD" xlink:href="#path-3"></use>
+                <use fill-opacity="0.3" fill="url(#linearGradient-1)" xlink:href="#path-3"></use>
+                <circle stroke-opacity="0.1" stroke="#000000" stroke-width="9" stroke-linejoin="square" fill="url(#linearGradient-2)" fill-rule="evenodd" cx="117" cy="117" r="112.5"></circle>
+            </g>
+            <g id="Path-2">
+                <use fill="black" fill-opacity="1" filter="url(#filter-5)" xlink:href="#path-4"></use>
+                <use fill="#FFFFFF" xlink:href="#path-4"></use>
+            </g>
+        </g>
+    </g>
+</svg>

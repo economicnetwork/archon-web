@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 236 236" enable-background="new 0 0 236 236" xml:space="preserve">
+<title>OKMC</title>
+<desc>Created with Sketch.</desc>
+<g id="Page-1">
+	<g id="OKMC">
+		<g id="Oval">
+			<g>
+				<circle id="path-2" fill="#5BD613" cx="118" cy="118" r="118"/>
+			</g>
+			
+				<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="-187.1751" y1="512.078" x2="-187.1652" y2="511.5508" gradientTransform="matrix(227 0 0 -227 42605.4453 116290.5625)">
+				<stop  offset="0" style="stop-color:#FFFFFF"/>
+				<stop  offset="1" style="stop-color:#000000"/>
+			</linearGradient>
+			
+				<circle fill="url(#SVGID_1_)" fill-opacity="0.2" stroke="#000000" stroke-width="9" stroke-opacity="0.1" cx="118" cy="118" r="113.5"/>
+		</g>
+	</g>
+</g>
+<g>
+	<g>
+		<path fill-rule="evenodd" clip-rule="evenodd" fill="#1E8F44" d="M190.5,87.1V44.5h-43.4l-29.8-30L87.2,44.6H44.6l0.2,42.8
+			l-30.6,29.9l30.3,30.3v42.7h43.3l29.7,30.5l30.5-30.5h42.7v-43.5l30-29.5L190.5,87.1z M185.7,145.8v40.1h-40.4l-27.9,27.9
+			L89.8,186H49.4v-40.1l-27.8-27.8l27.8-27.8l-0.2-40.9h40.7L117.6,21l27.7,28.2h40.4l0.3,40.5l28,27.8L185.7,145.8z M185.6,100.2
+			l-7.3,18.9V57h-25.1l9.3,19.2l-45.3-44L100.4,50l19.7,6.8H56.8v25.2l19.9-9.1l-44.6,44.6l17.6,16.9l7.2-19.5v63.2h25.4l-9.6-19.5
+			l44.8,44.5l17.6-17.9l-20.9-7.3h64v-25.2L158,163l44.6-45.9L185.6,100.2z"/>
+	</g>
+</g>
+<g>
+	<path fill="#5BD613" d="M102.6,116.4h32.7V96.3c0-3.6-0.2-6-0.7-7.1c-0.3-0.9-1.1-1.6-2.2-2.2c-1.5-0.8-3.1-1.2-4.7-1.2h-2.5v-1.9
+		h30.1v1.9h-2.5c-1.7,0-3.2,0.4-4.7,1.2c-1.1,0.6-1.9,1.4-2.3,2.5c-0.4,1.1-0.6,3.4-0.6,6.9v45.3c0,3.6,0.2,5.9,0.7,7
+		c0.3,0.9,1.1,1.6,2.1,2.2c1.5,0.8,3.1,1.2,4.8,1.2h2.5v1.9h-30.1v-1.9h2.5c2.9,0,5-0.8,6.3-2.5c0.9-1.1,1.3-3.8,1.3-8v-21.4h-32.7
+		v21.4c0,3.6,0.2,5.9,0.7,7c0.3,0.9,1.1,1.6,2.2,2.2c1.5,0.8,3.1,1.2,4.7,1.2h2.5v1.9H82.6v-1.9h2.5c2.9,0,5-0.8,6.3-2.5
+		c0.8-1.1,1.2-3.8,1.2-8V96.3c0-3.6-0.2-6-0.7-7.1c-0.3-0.9-1.1-1.6-2.1-2.2c-1.5-0.8-3.1-1.2-4.8-1.2h-2.5v-1.9h30.1v1.9h-2.5
+		c-1.7,0-3.2,0.4-4.7,1.2c-1.1,0.6-1.8,1.4-2.2,2.5c-0.4,1.1-0.6,3.4-0.6,6.9V116.4z"/>
+</g>
+</svg>
