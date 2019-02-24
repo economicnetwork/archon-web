@@ -1,5 +1,6 @@
 import json
 from flask import request, render_template, Blueprint, current_app
+from flask_cors import CORS
 import redis
 import requests
 
@@ -10,6 +11,8 @@ s3_url = "https://s3-eu-central-1.amazonaws.com/archondex-frontend/"
 #import archondex.relay.radar as radar
 
 archonweb = Blueprint("archon", __name__)  # pylint: disable=invalid-name
+
+CORS(archonweb)
 
 #host = "127.0.0.1"
 #port = 6379
@@ -30,7 +33,7 @@ def hello():
 
 @archonweb.route("/api/orders")
 def orders():
-    #open_orders = json.loads(redis_client.get("open_orders"))    
+    #open_orders = json.loads(redis_client.get("open_orders"))
     response = requests.get(s3_url + "orders").json()
     print (response)
     #open_orders = json.loads(orders)
@@ -44,4 +47,3 @@ def balances():
     return resp(bal)
 
     #balances = json.loads(redis_client.get("balance"))
-    
