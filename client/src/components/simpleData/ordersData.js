@@ -16,6 +16,22 @@ const styles = {
   }
 };
 
+
+function mapSymbol(baseTokenAddress){
+  //maybe pull from etherscan or some other place instead
+  var tokens = {
+    "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48":"USDC",       
+    "0x1985365e9f78359a9b6ad760e32412f4a445e862":"REP",
+    "0x0d8775f648430679a709e98d2b0cb6250d2887ef":"BAT",
+    "0x0f5d2fb29fb7d3cfee444a200298f468908cc942":"MANA",
+    "0xa4e8c3ec456107ea67d3075bf9e3df3a75823db0":"LOOM",
+    "0x0abdace70d3790235af448c88547603b945604ea":"DNT",
+    "0x41e5560054824ea6b0732e656e3ad64e20e94e45":"CVC"}
+    var sym =  tokens[baseTokenAddress];
+    //console.log(baseTokenAddress + " " + sym);
+    return sym;
+}
+
 class OrdersComponent extends Component {
   state = {
     orders: []
@@ -26,10 +42,12 @@ class OrdersComponent extends Component {
     .then(response => {
       let orders = [];
       for (let i=0; i<response.orders.length; i++) {
-        orders.push([response.orders[i].type, response.orders[i].price])
+        var sym = mapSymbol(response.orders[i].baseTokenAddress);
+        orders.push([response.orders[i].type, response.orders[i].price, sym])
       }
       this.setState({ orders: orders })
       console.log("Success!");
+      console.log("orders " + orders);
     })
     .catch(error => {
       console.log("Failed");
@@ -42,7 +60,7 @@ class OrdersComponent extends Component {
     return (
       <div className={classes.container}>
         <span className={classes.title}> Orders </span>
-        <SimpleTable data={this.state.orders} headers={["type", "price"]} />
+        <SimpleTable data={this.state.orders} headers={["type", "price", "baseTokenAddress"]} />
       </div>
     );
   }

@@ -30,7 +30,8 @@ function SimpleTable(props) {
         <TableHead>
           <TableRow>
             <TableCell>{headers[0]}</TableCell>
-            <TableCell align="right">{headers[1]}</TableCell>
+            <TableCell>{headers[1]}</TableCell>
+            <TableCell align="right">{headers[2]}</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -39,7 +40,10 @@ function SimpleTable(props) {
               <TableCell component="th" scope="row">
                 {row[0]}
               </TableCell>
-              <TableCell align="right">{row[1]}</TableCell>
+              <TableCell component="th" scope="row">
+                {row[1]}
+              </TableCell>
+              <TableCell align="right">{row[2]}</TableCell>
             </TableRow>
           ))}
         </TableBody>
