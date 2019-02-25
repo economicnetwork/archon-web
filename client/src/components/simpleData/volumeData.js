@@ -30,18 +30,18 @@ class VolumeComponent extends Component {
       for (var key in response) {
         //alert(key);
         var val = response[key];
-        var sym = "xx";
-        //tx.push([sym , response[i].type, response[i].filledBaseTokenAmount])
-        tx.push([key,val]);
+        var vol = parseFloat(val).toFixed(2);        
+        tx.push([key,vol]);
         
       }
       this.setState({ tx: tx })
       console.log("Success!");
-      console.log("tx " + tx);
+      console.log("volume " + tx);
     })
     .catch(error => {
       console.log("Failed");
     })
+
   }
 
   render() {

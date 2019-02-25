@@ -61,7 +61,7 @@ class OrdersComponent extends Component {
 
     return (
       <div className={classes.container}>
-        <span className={classes.title}> Orders </span>
+        <span className={classes.title}>Open Orders </span>
         <SimpleTable data={this.state.orders} headers={["symbol", "type", "price"]} />
       </div>
     );

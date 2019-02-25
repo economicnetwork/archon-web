@@ -7,6 +7,8 @@ import Balances from '../../components/simpleData/balancesData.js';
 import Tx from '../../components/simpleData/txData.js';
 import Volume from '../../components/simpleData/volumeData.js';
 
+import Grid from '@material-ui/core/Grid';
+
 
 const styles = {
   body: {
@@ -18,15 +20,37 @@ class Home extends Component {
   render() {
     const { classes } = this.props;
     return (
-      <div className={classes.container}>
+      <div className={classes.container}>      
         <Header />
         <div className={classes.body}>
+
+        <Grid container className={classes.root} spacing={16}>
+        <Grid item xs={12}>
+          <Grid container className={classes.demo} justify="center" spacing={Number(16)}>
+
+          <Grid item>
+            <Orders />
+          </Grid>
+
+          <Grid item>
+            <Balances />
+          </Grid>
+
+          <Grid item>
+            <Volume />            
+          </Grid>
+
+          <Grid item>
+            <Tx />
+          </Grid>
+
+          {/* <Exchange /> */}
+
+          </Grid>
+        </Grid>        
+      </Grid>
           
-          <Orders />
-          <Balances />
-          <Volume />
-          <Exchange />
-          <Tx />
+          
         </div>
       </div>
     );

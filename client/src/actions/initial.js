@@ -60,7 +60,7 @@ export const getInitialVolumeData = () => {
     return fetchVolume()
     .then(res => {
       dispatch({
-        type: FETCH_TX,
+        type: FETCH_VOLUME,
         data: res.data
       })
       return Promise.resolve(res.data)

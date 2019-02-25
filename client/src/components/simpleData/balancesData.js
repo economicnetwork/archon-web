@@ -25,8 +25,9 @@ class BalancesComponent extends Component {
     this.props.getInitialBalancesData()
     .then(response => {
       let balances = [];
+      
       Object.keys(response).map((key) => (
-        balances.push([key, response[key]])
+        balances.push([key, parseFloat(response[key]).toFixed(4)])
       ));
       this.setState({ balances: balances })
       console.log("Success!");
@@ -41,8 +42,8 @@ class BalancesComponent extends Component {
 
     return (
       <div className={classes.container}>
-        <span className={classes.title}> Balance </span>
-        <SimpleTable data={this.state.balances} headers={["symbol", "amount"]} />
+        <span className={classes.title}> Balances </span>
+        <SimpleTable data={this.state.balances} headers={["Symbol", "Amount"]} />
       </div>
     );
   }

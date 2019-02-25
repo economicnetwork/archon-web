@@ -18,7 +18,7 @@ import React, { Component } from "react";
 import { connect } from 'react-redux';
 import { withStyles } from '@material-ui/core/styles';
 import { getInitialTxData } from '../../actions/initial.js';
-import SimpleTable from '../SimpleTable.js';
+import TxTable from "../TxTable.js";
 
 const styles = {
   container: {
@@ -58,13 +58,14 @@ class TxComponent extends Component {
     .then(response => {
       let tx = [];
       for (let i=0; i<response.length; i++) {
-        var sym = mapSymbol(response[i].baseTokenAddress);
-        console.log(response[i]);
-        tx.push([sym , response[i].type, response[i].filledBaseTokenAmount])
+        var sym = mapSymbol(response[i].baseTokenAddress);        
+        var amount = parseFloat(response[i].filledBaseTokenAmount).toFixed(2);
+        //BUG timestamp doesn't show
+        tx.push([sym , response[i].type, amount, response[i].timestamp])
         
       }
       this.setState({ tx: tx })
-      console.log("Success!");
+      console.log("Success!"); 
       console.log("tx " + tx);
     })
     .catch(error => {
@@ -77,8 +78,8 @@ class TxComponent extends Component {
 
     return (
       <div className={classes.container}>
-        <span className={classes.title}> Transactions </span>
-        <SimpleTable data={this.state.tx} headers={["symbol", "type", "fillamount"]} />
+        <span className={classes.title}>User Transactions </span>
+        <TxTable data={this.state.tx} headers={["Symbol", "Type", "Fill amount", "Time"]} />
       </div>
     );
   }
