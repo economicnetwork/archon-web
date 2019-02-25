@@ -30,18 +30,17 @@ def hello():
 
 @archonweb.route("/api/orders")
 def orders():
-    #open_orders = json.loads(redis_client.get("open_orders"))    
     response = requests.get(s3_url + "orders").json()
-    print (response)
-    #open_orders = json.loads(orders)
     orders = {"orders": response}
     return resp(orders)
 
 @archonweb.route("/api/balance")
 def balances():
-    bal = requests.get(s3_url + "balances").json()
-    print (bal)
-    return resp(bal)
+    bal = requests.get(s3_url + "balances").json()    
+    return resp({"balance":bal})
 
-    #balances = json.loads(redis_client.get("balance"))
-    
+@archonweb.route("/api/trades")
+def trades():
+    trades = requests.get(s3_url + "trades").json()
+    print (trades)
+    return resp({"trades":trades})
