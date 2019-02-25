@@ -1,3 +1,19 @@
+//{"baseTokenAddress": 
+// "quoteTokenAddress":
+//  "transactionHash":
+//  "type":
+//  "blockNumber":
+//, "makerAddress": ""
+//  "takerAddress": "", 
+// "feeRecipientAddress": ""
+// "makerFeePaid": "0", 
+// "takerFeePaid": "0", 
+// "filledBaseTokenAmount": 
+// "filledQuoteTokenAmount":
+//  "orderHash": 
+//  "timestamp": 
+//  "outlier": false
+
 import React, { Component } from "react";
 import { connect } from 'react-redux';
 import { withStyles } from '@material-ui/core/styles';
@@ -34,21 +50,22 @@ function mapSymbol(baseTokenAddress){
 
 class TxComponent extends Component {
   state = {
-    orders: []
+    tx: []
   }
 
   componentWillMount() {
     this.props.getInitialTxData()
     .then(response => {
-      let orders = [];
+      let tx = [];
       for (let i=0; i<response.length; i++) {
         var sym = mapSymbol(response[i].baseTokenAddress);
-        orders.push([sym ])
+        console.log(response[i]);
+        tx.push([sym , response[i].type, response[i].filledBaseTokenAmount])
         
       }
-      this.setState({ orders: orders })
+      this.setState({ tx: tx })
       console.log("Success!");
-      console.log("orders " + orders);
+      console.log("tx " + tx);
     })
     .catch(error => {
       console.log("Failed");
@@ -60,8 +77,8 @@ class TxComponent extends Component {
 
     return (
       <div className={classes.container}>
-        <span className={classes.title}> Tx </span>
-        <SimpleTable data={this.state.orders} headers={["symbol"]} />
+        <span className={classes.title}> Transactions </span>
+        <SimpleTable data={this.state.tx} headers={["symbol", "type", "fillamount"]} />
       </div>
     );
   }

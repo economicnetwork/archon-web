@@ -4,6 +4,7 @@ from flask_cors import CORS
 import redis
 import requests
 from archondex.abstract_marketmaker import Marketmaker
+from archondex.calc_volume import get_sum_volume_date
 
 #temporary bucket
 s3_url = "https://s3-eu-central-1.amazonaws.com/archondex-frontend/"
@@ -56,5 +57,12 @@ def balances():
 def tx():
     tx = m.fetch_tx()
     r = resp(tx)
+    return r
+
+@archonweb.route("/api/volume")
+def volume():
+    #print (volume.__file__)
+    sum_volume_by_date = get_sum_volume_date()
+    r = resp(sum_volume_by_date)
     return r
         

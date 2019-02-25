@@ -5,6 +5,7 @@ import Exchange from '../../components/simpleData/exchangeData.js';
 import Orders from '../../components/simpleData/ordersData.js';
 import Balances from '../../components/simpleData/balancesData.js';
 import Tx from '../../components/simpleData/txData.js';
+import Volume from '../../components/simpleData/volumeData.js';
 
 
 const styles = {
@@ -23,8 +24,9 @@ class Home extends Component {
           
           <Orders />
           <Balances />
-          <Tx />
+          <Volume />
           <Exchange />
+          <Tx />
         </div>
       </div>
     );
