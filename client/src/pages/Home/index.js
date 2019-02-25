@@ -4,6 +4,8 @@ import Header from '../../components/Header.js';
 import Exchange from '../../components/simpleData/exchangeData.js';
 import Orders from '../../components/simpleData/ordersData.js';
 import Balances from '../../components/simpleData/balancesData.js';
+import Tx from '../../components/simpleData/txData.js';
+
 
 const styles = {
   body: {
@@ -18,9 +20,11 @@ class Home extends Component {
       <div className={classes.container}>
         <Header />
         <div className={classes.body}>
-          <Exchange />
+          
           <Orders />
           <Balances />
+          <Tx />
+          <Exchange />
         </div>
       </div>
     );

@@ -3,12 +3,15 @@ from flask import request, render_template, Blueprint, current_app
 from flask_cors import CORS
 import redis
 import requests
+from archondex.abstract_marketmaker import Marketmaker
 
 #temporary bucket
 s3_url = "https://s3-eu-central-1.amazonaws.com/archondex-frontend/"
 
 
 #import archondex.relay.radar as radar
+
+m = Marketmaker()
 
 archonweb = Blueprint("archon", __name__)  # pylint: disable=invalid-name
 
@@ -34,16 +37,24 @@ def hello():
 @archonweb.route("/api/orders")
 def orders():
     #open_orders = json.loads(redis_client.get("open_orders"))
-    response = requests.get(s3_url + "orders").json()
-    print (response)
+    #response = requests.get(s3_url + "orders").json()
+    #print (response)
     #open_orders = json.loads(orders)
-    orders = {"orders": response}
+    orders = m.fetch_orders()
+    print ("orders ",orders)
+    #orders = {"orders": orders}
+    #orders = {"orders": response}
     return resp(orders)
 
 @archonweb.route("/api/balance")
 def balances():
-    bal = requests.get(s3_url + "balances").json()
-    print (bal)
+    #bal = requests.get(s3_url + "balances").json()
+    bal = m.fetch_balances()
     return resp(bal)
 
-    #balances = json.loads(redis_client.get("balance"))
+@archonweb.route("/api/tx")
+def tx():
+    tx = m.fetch_tx()
+    r = resp(tx)
+    return r
+        

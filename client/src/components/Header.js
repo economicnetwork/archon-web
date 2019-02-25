@@ -137,14 +137,14 @@ class Header extends React.Component {
         open={isMobileMenuOpen}
         onClose={this.handleMenuClose}
       >
-        <MenuItem onClick={this.handleMobileMenuClose}>
+        {/* <MenuItem onClick={this.handleMobileMenuClose}>
           <IconButton color="inherit">
             <Badge badgeContent={4} color="secondary">
               <MailIcon />
             </Badge>
           </IconButton>
           <p>Messages</p>
-        </MenuItem>
+        </MenuItem> */}
         <MenuItem onClick={this.handleMobileMenuClose}>
           <IconButton color="inherit">
             <Badge badgeContent={11} color="secondary">
@@ -172,7 +172,9 @@ class Header extends React.Component {
             <Typography className={classes.title} variant="h6" color="inherit" noWrap>
               Archon
             </Typography>
-            <div className={classes.search}>
+
+            
+            {/* <div className={classes.search}>
               <div className={classes.searchIcon}>
                 <SearchIcon />
               </div>
@@ -183,7 +185,8 @@ class Header extends React.Component {
                   input: classes.inputInput,
                 }}
               />
-            </div>
+            </div> */}
+            
             <div className={classes.grow} />
             <div className={classes.sectionDesktop}>
               <IconButton color="inherit">

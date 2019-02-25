@@ -1,1 +1,3 @@
 archonweb_env
+*.priv
+log/

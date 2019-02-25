@@ -31,6 +31,21 @@ export const fetchBalances = () => {
   })
 }
 
+export const fetchTx = () => {
+  return axios({
+    url: baseURL + '/api/tx',
+    Accept: 'application/json',
+    headers: { 'Content-Type': 'application/json' },
+    method: 'GET'
+  })
+  .then(response => {
+    return Promise.resolve(response)
+  })
+  .catch(error => {
+    return Promise.reject(error)
+  })
+}
+
 export const fetchCryptos = () => {
   return axios({
     url: 'https://min-api.cryptocompare.com/data/pricemulti?fsyms=BTC,ETH,IOT,XRP,LTC,DASH,XEM&tsyms=USD',

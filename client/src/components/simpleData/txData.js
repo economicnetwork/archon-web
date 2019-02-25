@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
 import { withStyles } from '@material-ui/core/styles';
-import { getInitialOrdersData } from '../../actions/initial.js';
+import { getInitialTxData } from '../../actions/initial.js';
 import SimpleTable from '../SimpleTable.js';
 
 const styles = {
@@ -32,19 +32,18 @@ function mapSymbol(baseTokenAddress){
     return sym;
 }
 
-class OrdersComponent extends Component {
+class TxComponent extends Component {
   state = {
     orders: []
   }
 
   componentWillMount() {
-    this.props.getInitialOrdersData()
+    this.props.getInitialTxData()
     .then(response => {
       let orders = [];
       for (let i=0; i<response.length; i++) {
         var sym = mapSymbol(response[i].baseTokenAddress);
-        var p = parseFloat(response[i].price).toFixed(8);
-        orders.push([sym, response[i].type, p ])
+        orders.push([sym ])
         
       }
       this.setState({ orders: orders })
@@ -61,8 +60,8 @@ class OrdersComponent extends Component {
 
     return (
       <div className={classes.container}>
-        <span className={classes.title}> Orders </span>
-        <SimpleTable data={this.state.orders} headers={["symbol", "type", "price"]} />
+        <span className={classes.title}> Tx </span>
+        <SimpleTable data={this.state.orders} headers={["symbol"]} />
       </div>
     );
   }
@@ -74,10 +73,10 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    getInitialOrdersData: () => {
-      return dispatch(getInitialOrdersData())
+    getInitialTxData: () => {
+      return dispatch(getInitialTxData())
     }
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(OrdersComponent));
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(TxComponent));
