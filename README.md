@@ -1,6 +1,8 @@
 # archon web app
 
-frontend for archon
+Archon webapp is a dashboard for trading. It is a frontend for archon to diplay relevant trading information. It currently supports 0x
+
+The python backend uses archon-dex
 
 ## setup
 
